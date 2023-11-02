@@ -48,6 +48,13 @@ class Event extends Model
     public function unenrollUser(User $user) {
         if($this->started()) return;
         $this->attendants()->detach($user->id);
+        if($this->attendants->count() > $this->max_users && $this->max_users != -1) {
+            // move first queued user from queue to event
+            $queuedUser = $this->queued()->first();
+            if ($queuedUser) {
+                $queuedUser->update(['in_queue' => false]);
+            }
+        }
     }
 
     public function percentageFilled() {
