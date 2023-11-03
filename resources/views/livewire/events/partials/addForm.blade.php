@@ -94,8 +94,8 @@ $addEvent = function () {
         <div>
             <x-input-label for="location_type" :value="__('Location Type')" />
             <select wire:model="location_type" id="location_type" name="location_type" class="mt-1 block w-full dark:text-gray-200 dark:bg-gray-800">
-                <option value="online">Online</option>
-                <option value="presence">Presence</option>
+                <option value="online">{{ __('Online') }}</option>
+                <option value="presence">{{ __('Presence') }}</option>
             </select>
             <x-input-error :messages="$errors->get('location_type')" class="mt-2 text-red-600" />
         </div>
