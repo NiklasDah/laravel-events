@@ -25,6 +25,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('event/{event}', App\Livewire\Events\Index::class)->name('event.index');
 });
 
+Route::get('/caddy-check', 'CaddyController@check');
+
 Route::get('scanner/{event}', App\Livewire\Events\Scanner::class)
     ->middleware(['auth', 'verified', 'organizer'])
     ->name('scanner');
