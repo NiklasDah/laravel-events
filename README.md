@@ -12,6 +12,8 @@ npm run build
 ./vendor/bin/sail artisan key:generate
 ./vendor/bin/sail artisan migrate
 ./vendor/bin/sail artisan db:seed --class=RoleSeeder
+
+# Falls SSL-Gewünscht ist, muss die entsprechende Domain zum CaddyController.php ergänzt werden.
 ```
 Um einen Admin-Account zu erstellen, ist ein manueller eintrag in user_roles nötig, welcher die user_id des gewünschten Nutzers und die role_id der Rolle enthält:
 ```sh
