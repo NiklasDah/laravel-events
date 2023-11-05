@@ -12,7 +12,7 @@ class CaddyController extends Controller
         $authorizedDomains = [
             'laravel.test',
             'www.laravel.test',
-            'webprog-iu.niklas.codes'
+            'webprog.iu.niklas.codes'
             // Add subdomains here
         ];
 
