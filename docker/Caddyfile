@@ -1,14 +1,8 @@
 {
-    on_demand_tls {
-        ask http://laravel.test/caddy-check
-    }
+    email ssl@niklas.codes
 }
 
-:443 {
-    tls internal {
-        on_demand
-    }
-
+webprog.iu.niklas.codes {
     reverse_proxy laravel.test {
         header_up Host {host}
         header_up X-Real-IP {remote}
