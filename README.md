@@ -20,8 +20,8 @@ Um einen Admin-Account zu erstellen, ist ein manueller eintrag in user_roles nö
 ./vendor/bin/sail mysql
 ```
 ```sql
-INSERT INTO your_table_name (user_id, role_id, created_at, updated_at)
-VALUES (1, 1, NOW(), NOW());
+INSERT INTO user_roles (user_id, role_id, created_at, updated_at)
+VALUES (1, 2, NOW(), NOW());
 ```
 
 ## License
