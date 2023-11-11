@@ -40,10 +40,14 @@
           </div>
       </dl>
       <div class="mt-6 border-t dark:border-gray-50/5 border-gray-900/5 px-6 py-6">
+        @if($event->started())
+            <span>{{ __("Event has already started, you are unable to attend") }}</span>
+        @else
         @if($event->percentageFilled() < 100)
             <span wire:click="enroll" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:underline hover:cursor-pointer">{{ __('Register') }} <span aria-hidden="true">&rarr;</span></span>
         @else
             <span wire:click="enroll" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:underline hover:cursor-pointer">{{ __('Register for queue') }} <span aria-hidden="true">&rarr;</span></span>
+        @endif
         @endif
       </div>
     </div>
