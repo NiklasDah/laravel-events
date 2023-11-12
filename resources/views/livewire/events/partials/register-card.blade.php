@@ -61,7 +61,9 @@
           <dd class="mt-1 text-base font-semibold leading-6 text-gray-900 dark:text-gray-100">{{ __('for event :event_name', ['event_name' => $event->name]) }}</dd>
         </div>
         <div class="mt-4 flex justify-center items-center w-full relative flex-none gap-x-4 px-6 pt-6 border-t dark:border-gray-50/5 border-gray-900/5">
+          @if($event->attendants->find(auth()->user()->id))
             {{ QrCode::size(200)->generate($event->attendants->find(auth()->user()->id)->pivot->registration_number) }}
+          @endif
         </div>
         <div class="mt-4 flex w-full flex-none gap-x-4 px-6 pt-6 border-t dark:border-gray-50/5 border-gray-900/5">
           <dt class="flex-none">
